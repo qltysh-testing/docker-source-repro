@@ -60,7 +60,7 @@ ssh-keygen -t ed25519 -f /path/to/key -N ""
 
 **Best for:** CI environments where an SSH key is stored as a secret (e.g., Buildkite, CircleCI).
 
-**Note:** Requires a Qlty CLI version that includes [qltysh/qlty#2734](https://github.com/qltysh/qlty/pull/2734). Earlier versions have a bug where the libgit2 credential callback recreates the authenticator on every invocation, resetting its state so it retries SSH agent auth indefinitely and never advances to key-file auth.
+**Note:** Requires Qlty CLI >= [0.618.0](https://github.com/qltysh/qlty/releases/tag/qlty-v0.618.0). Earlier versions have a bug where the libgit2 credential callback recreates the authenticator on every invocation, resetting its state so it retries SSH agent auth indefinitely and never advances to key-file auth. See [qltysh/qlty#2734](https://github.com/qltysh/qlty/pull/2734) for details.
 
 ## Option 3: HTTPS + Token via git insteadOf (Recommended for CI)
 
