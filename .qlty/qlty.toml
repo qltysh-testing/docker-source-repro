@@ -17,5 +17,5 @@ default = true
 
 [[source]]
 name = "private-test-source"
-repository = "git@github.com:qltysh/private-test-source.git"
+repository = "git@github.com:qltysh-testing/private-test-source.git"
 branch = "main"
