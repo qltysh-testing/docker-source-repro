@@ -14,14 +14,16 @@ These are general SSH-in-Docker issues that affect any tool making SSH connectio
 
 ## Setup
 
-This repo has a `qlty.toml` that references a private source:
+Before testing, edit `.qlty/qlty.toml` and replace the source with your own private repository:
 
 ```toml
 [[source]]
-name = "private-test-source"
-repository = "git@github.com:qltysh/private-test-source.git"
+name = "my-source"
+repository = "git@github.com:your-org/your-private-source.git"
 branch = "main"
 ```
+
+The repository must contain a `source.toml` file with valid Qlty source configuration. The credentials you provide (via the options below) must have read access to this repository.
 
 The Dockerfile adds GitHub's host key via `ssh-keyscan` to solve the `known_hosts` issue. The three scripts below show different ways to provide authentication credentials.
 
