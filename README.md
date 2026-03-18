@@ -4,11 +4,13 @@ This repository demonstrates how to run `qlty sources fetch` inside a Docker con
 
 ## The Problem
 
-Qlty uses [libgit2](https://libgit2.org/) (via the Rust `git2` crate) for Git operations. When running inside Docker, SSH-based source fetching can fail because the container lacks:
+When running inside Docker, SSH-based source fetching can fail because the container lacks:
 
 - An SSH agent (`SSH_AUTH_SOCK` is not available)
 - SSH keys in the default `~/.ssh/` location
 - GitHub's host key in `~/.ssh/known_hosts`
+
+These are general SSH-in-Docker issues that affect any tool making SSH connections, not just Qlty.
 
 ## Setup
 
