@@ -1,0 +1,5 @@
+coverage/
+.rspec_status
+vendor/
+.bundle/
+.ruby-lsp/

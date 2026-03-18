@@ -1,0 +1,21 @@
+config_version = "0"
+
+exclude_patterns = [
+  "node_modules/**",
+  "vendor/**",
+  "coverage/**",
+]
+
+test_patterns = [
+  "**/spec/**",
+  "**/*_spec.*",
+]
+
+[[source]]
+name = "default"
+default = true
+
+[[source]]
+name = "private-test-source"
+repository = "git@github.com:qltysh/private-test-source.git"
+branch = "main"
