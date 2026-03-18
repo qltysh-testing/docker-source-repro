@@ -12,6 +12,8 @@ When running inside Docker, SSH-based source fetching can fail because the conta
 
 These are general SSH-in-Docker issues that affect any tool making SSH connections, not just Qlty.
 
+Prior to [0.618.0](https://github.com/qltysh/qlty/releases/tag/qlty-v0.618.0), the Qlty CLI also had an issue where SSH key-file authentication was not used — the credential callback would default to SSH agent auth and not fall through to key-file auth. This was resolved in 0.618.0 (see [qltysh/qlty#2734](https://github.com/qltysh/qlty/pull/2734)).
+
 ## Setup
 
 Before testing, edit `.qlty/qlty.toml` and replace the source with your own private repository:
